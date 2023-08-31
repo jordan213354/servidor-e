@@ -1,7 +1,5 @@
 const express = require("express");
-
 const listEditRouter = express.Router();
-
 function errorSolicitud(req, res, next) {
   if (req.method === "POST" && Object.keys(req.body).length === 0) {
     return res.status(400).send("el cuerpo de la solicitud esta vacio");
@@ -25,9 +23,9 @@ function errorSolicitud(req, res, next) {
 }
 
 let tasks = [
-  { id: "123456", isCompleted: false, description: "pasear al perro" },
-  { id: "789012", isCompleted: true, description: "hacer las compras" },
-  { id: "345678", isCompleted: false, description: "aprender java" },
+  { id: "123456", isCompleted: false, description: "Walk the dog" },
+  { id: "789012", isCompleted: true, description: "Buy groceries" },
+  { id: "345678", isCompleted: false, description: "Read a book" },
 ];
 
 // Ruta para crear una nueva tarea (solicitud POST)
